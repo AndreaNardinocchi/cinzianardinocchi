@@ -1,0 +1,590 @@
+---
+layout: layout.njk
+eleventyNavigation:
+
+---
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+  // Berlin
+  const currentCity = "berlin";
+  const currentCityData = weatherData[currentCity + "_daily"]
+  const currentCityDataHourly = weatherData[currentCity + "_hourly"]
+  const date = new Date();
+  const day = date.getDay();
+  const indexOfToday = currentCityData.daily.time.indexOf(`Today`); 
+  const apparent_temperature_max = document.getElementById("apparent_temperature_max");
+  const wind_gusts_10m_max = document.getElementById("wind_gusts_10m_max");
+  const temperature_2m_max = document.getElementById("temperature_2m_max");
+  const temperature_2m_min = document.getElementById("temperature_2m_min");
+  const wind_speed_10m_max = document.getElementById("wind_speed_10m_max");
+  const apparent_temperature_min = document.getElementById("apparent_temperature_min");
+  const time = document.getElementById("time");
+  const weatherCode = document.getElementById("weatherCode");
+  
+  // ICONS
+  let iconDailyToday=[];
+  
+  iconDailyToday.push('/images/storm.png');
+  iconDailyToday.push('/images/cloudy.png');
+  iconDailyToday.push('/images/sun.png');
+  iconDailyToday.push('/images/fog.png');
+  iconDailyToday.push('/images/rain.png');
+  iconDailyToday.push('/images/snow.png');
+  
+if (currentCityData.daily.weather_code[indexOfToday] === 0) {
+ iconDailyToday = '/images/sun.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 1) && (currentCityData.daily.weather_code[indexOfToday] <=3)) {
+ iconDailyToday = '/images/cloudy.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 45) && (currentCityData.daily.weather_code[indexOfToday] <=48)) {
+  iconDailyToday = '/images/fog.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 51) && (currentCityData.daily.weather_code[indexOfToday] <=67)) {
+  iconDailyToday = '/images/rain.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 80) && (currentCityData.daily.weather_code[indexOfToday] <=82)) {
+  iconDailyToday = '/images/rain.png';
+}  else if ((currentCityData.daily.weather_code[indexOfToday] >= 71) && (currentCityData.daily.weather_code[indexOfToday] <=75)) {
+  iconDailyToday = '/images/snow.png';
+} else if (currentCityData.daily.weather_code[indexOfToday] === 95){
+ iconDailyToday = '/images/storm.png';
+} else {
+  iconDailyToday = '/images/sun.png';
+}
+  
+  // Berlin Card
+  
+  const dashboardCardTitleBerlin = document.querySelector('#cityfocus-1-berlin-heading');
+  dashboardCardTitleBerlin.innerHTML = 'Berlin';
+  
+  const dashboardBerlinCardImage = document.querySelector('#cityfocus-1-berlin-card-image');
+  dashboardBerlinCardImage.src = iconDailyToday;
+  
+  const dashboardBerlinCardTemp = document.querySelector('#cityfocus-1-berlin-card-temp');
+  dashboardBerlinCardTemp.innerHTML = currentCityData.daily.temperature_2m_max[indexOfToday] + ' °C';
+  
+  const dashboardBerlinCardWind = document.querySelector('#cityfocus-1-berlin-card-wind');
+  dashboardBerlinCardWind.innerHTML = currentCityData.daily.wind_speed_10m_max[indexOfToday] + ' km/h'; 
+  
+  });
+  
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  
+  // Amsterdam
+  const currentCity = "amsterdam";
+  const currentCityData = weatherData[currentCity + "_daily"]
+  const currentCityDataHourly = weatherData[currentCity + "_hourly"]
+  const date = new Date();
+  const hour = date.getHours() + ':' + date.getMinutes();
+  const day = date.getDay();
+  const indexOfToday = currentCityData.daily.time.indexOf(`Today`);  
+  const apparent_temperature_max = document.getElementById("apparent_temperature_max");
+  const wind_gusts_10m_max = document.getElementById("wind_gusts_10m_max");
+  const temperature_2m_max = document.getElementById("temperature_2m_max");
+  const temperature_2m_min = document.getElementById("temperature_2m_min");
+  const wind_speed_10m_max = document.getElementById("wind_speed_10m_max");
+  const apparent_temperature_min = document.getElementById("apparent_temperature_min");
+  const time = document.getElementById("time");
+  const weatherCode = document.getElementById("weatherCode");
+  
+  // ICONS
+  let iconDailyToday=[];
+  
+  iconDailyToday.push('/images/storm.png');
+  iconDailyToday.push('/images/cloudy.png');
+  iconDailyToday.push('/images/sun.png');
+  iconDailyToday.push('/images/fog.png');
+  iconDailyToday.push('/images/rain.png');
+  iconDailyToday.push('/images/snow.png');
+  
+if (currentCityData.daily.weather_code[indexOfToday] === 0) {
+ iconDailyToday = '/images/sun.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 1) && (currentCityData.daily.weather_code[indexOfToday] <=3)) {
+ iconDailyToday = '/images/cloudy.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 45) && (currentCityData.daily.weather_code[indexOfToday] <=48)) {
+  iconDailyToday = '/images/fog.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 51) && (currentCityData.daily.weather_code[indexOfToday] <=67)) {
+  iconDailyToday = '/images/rain.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 80) && (currentCityData.daily.weather_code[indexOfToday] <=82)) {
+  iconDailyToday = '/images/rain.png';
+}  else if ((currentCityData.daily.weather_code[indexOfToday] >= 71) && (currentCityData.daily.weather_code[indexOfToday] <=75)) {
+  iconDailyToday = '/images/snow.png';
+} else if (currentCityData.daily.weather_code[indexOfToday] === 95){
+ iconDailyToday = '/images/storm.png';
+} else {
+  iconDailyToday = '/images/sun.png';
+}
+  
+  
+  
+  // Amsterdam Card
+  
+  const dashboardCardTitleAmsterdam = document.querySelector('#cityfocus-1-amsterdam-heading');
+  dashboardCardTitleAmsterdam.innerHTML = 'Amsterdam';
+  
+  const dashboardAmsterdamCardImage = document.querySelector('#cityfocus-1-amsterdam-card-image');
+  dashboardAmsterdamCardImage.src = iconDailyToday;
+  
+  const dashboardAmsterdamCardTemp = document.querySelector('#cityfocus-1-amsterdam-card-temp');
+  dashboardAmsterdamCardTemp.innerHTML = currentCityData.daily.temperature_2m_max[indexOfToday] + ' °C';
+  
+  const dashboardAmsterdamCardWind = document.querySelector('#cityfocus-1-amsterdam-card-wind');
+  dashboardAmsterdamCardWind.innerHTML = currentCityData.daily.wind_speed_10m_max[indexOfToday] + ' km/h'; 
+  
+  });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  
+  // Copenhagen
+  const currentCity = "copenhagen";
+  const currentCityData = weatherData[currentCity + "_daily"]
+  const currentCityDataHourly = weatherData[currentCity + "_hourly"]
+  const date = new Date();
+  const hour = date.getHours() + ':' + date.getMinutes();
+  const day = date.getDay();
+  const indexOfToday = currentCityData.daily.time.indexOf(`Today`);  
+  const apparent_temperature_max = document.getElementById("apparent_temperature_max");
+  const wind_gusts_10m_max = document.getElementById("wind_gusts_10m_max");
+  const temperature_2m_max = document.getElementById("temperature_2m_max");
+  const temperature_2m_min = document.getElementById("temperature_2m_min");
+  const wind_speed_10m_max = document.getElementById("wind_speed_10m_max");
+  const apparent_temperature_min = document.getElementById("apparent_temperature_min");
+  const time = document.getElementById("time");
+  const weatherCode = document.getElementById("weatherCode");
+  
+  // ICONS
+  let iconDailyToday=[];
+  
+  iconDailyToday.push('/images/storm.png');
+  iconDailyToday.push('/images/cloudy.png');
+  iconDailyToday.push('/images/sun.png');
+  iconDailyToday.push('/images/fog.png');
+  iconDailyToday.push('/images/rain.png');
+  iconDailyToday.push('/images/snow.png');
+  
+if (currentCityData.daily.weather_code[indexOfToday] === 0) {
+ iconDailyToday = '/images/sun.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 1) && (currentCityData.daily.weather_code[indexOfToday] <=3)) {
+ iconDailyToday = '/images/cloudy.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 45) && (currentCityData.daily.weather_code[indexOfToday] <=48)) {
+  iconDailyToday = '/images/fog.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 51) && (currentCityData.daily.weather_code[indexOfToday] <=67)) {
+  iconDailyToday = '/images/rain.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 80) && (currentCityData.daily.weather_code[indexOfToday] <=82)) {
+  iconDailyToday = '/images/rain.png';
+}  else if ((currentCityData.daily.weather_code[indexOfToday] >= 71) && (currentCityData.daily.weather_code[indexOfToday] <=75)) {
+  iconDailyToday = '/images/snow.png';
+} else if (currentCityData.daily.weather_code[indexOfToday] === 95){
+ iconDailyToday = '/images/storm.png';
+} else {
+  iconDailyToday = '/images/sun.png';
+}
+  
+  
+  // Copenaghen Card
+  
+  const dashboardCardTitleCopenaghen = document.querySelector('#cityfocus-1-copenaghen-heading');
+  dashboardCardTitleCopenaghen.innerHTML = 'Copenaghen';
+  
+  const dashboardCopenaghenCardImage = document.querySelector('#cityfocus-1-copenaghen-card-image');
+  dashboardCopenaghenCardImage.src = iconDailyToday;
+  
+  const dashboardCopenaghenCardTemp = document.querySelector('#cityfocus-1-copenaghen-card-temp');
+  dashboardCopenaghenCardTemp.innerHTML = currentCityData.daily.temperature_2m_max[indexOfToday] + ' °C';
+  
+  const dashboardCopenaghenCardWind = document.querySelector('#cityfocus-1-copenaghen-card-wind');
+  dashboardCopenaghenCardWind.innerHTML = currentCityData.daily.wind_speed_10m_max[indexOfToday] + ' km/h'; 
+  
+  });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  
+   // Cork
+  const currentCity = "cork";
+  const currentCityData = weatherData[currentCity + "_daily"]
+  const currentCityDataHourly = weatherData[currentCity + "_hourly"]
+  const date = new Date();
+  const day = date.getDay();
+  const indexOfToday = currentCityData.daily.time.indexOf(`Today`); 
+  const apparent_temperature_max = document.getElementById("apparent_temperature_max");
+  const wind_gusts_10m_max = document.getElementById("wind_gusts_10m_max");
+  const temperature_2m_max = document.getElementById("temperature_2m_max");
+  const temperature_2m_min = document.getElementById("temperature_2m_min");
+  const wind_speed_10m_max = document.getElementById("wind_speed_10m_max");
+  const apparent_temperature_min = document.getElementById("apparent_temperature_min");
+  const time = document.getElementById("time");
+  const weatherCode = document.getElementById("weatherCode");
+  
+  // ICONS
+  let iconDailyToday=[];
+  
+  iconDailyToday.push('/images/storm.png');
+  iconDailyToday.push('/images/cloudy.png');
+  iconDailyToday.push('/images/sun.png');
+  iconDailyToday.push('/images/fog.png');
+  iconDailyToday.push('/images/rain.png');
+  iconDailyToday.push('/images/snow.png');
+  
+if (currentCityData.daily.weather_code[indexOfToday] === 0) {
+ iconDailyToday = '/images/sun.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 1) && (currentCityData.daily.weather_code[indexOfToday] <=3)) {
+ iconDailyToday = '/images/cloudy.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 45) && (currentCityData.daily.weather_code[indexOfToday] <=48)) {
+  iconDailyToday = '/images/fog.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 51) && (currentCityData.daily.weather_code[indexOfToday] <=67)) {
+  iconDailyToday = '/images/rain.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 80) && (currentCityData.daily.weather_code[indexOfToday] <=82)) {
+  iconDailyToday = '/images/rain.png';
+}  else if ((currentCityData.daily.weather_code[indexOfToday] >= 71) && (currentCityData.daily.weather_code[indexOfToday] <=75)) {
+  iconDailyToday = '/images/snow.png';
+} else if (currentCityData.daily.weather_code[indexOfToday] === 95){
+ iconDailyToday = '/images/storm.png';
+} else {
+  iconDailyToday = '/images/sun.png';
+}
+  
+  
+  // Cork Card
+  
+  const dashboardCardTitleCork = document.querySelector('#cityfocus-1-cork-heading');
+  dashboardCardTitleCork.innerHTML = 'Cork';
+  
+  const dashboardCorkCardImage = document.querySelector('#cityfocus-1-cork-card-image');
+  dashboardCorkCardImage.src = iconDailyToday;
+  
+  const dashboardCorkCardTemp = document.querySelector('#cityfocus-1-cork-card-temp');
+  dashboardCorkCardTemp.innerHTML = currentCityData.daily.temperature_2m_max[indexOfToday] + ' °C';
+  
+  const dashboardCorkCardWind = document.querySelector('#cityfocus-1-cork-card-wind');
+  dashboardCorkCardWind.innerHTML = currentCityData.daily.wind_speed_10m_max[indexOfToday] + ' km/h'; 
+  
+  });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  
+   // New York
+  const currentCity = "new_york";
+  const currentCityData = weatherData[currentCity + "_daily"]
+  const currentCityDataHourly = weatherData[currentCity + "_hourly"]
+  const date = new Date();
+  const day = date.getDay();
+  const indexOfToday = currentCityData.daily.time.indexOf(`Today`); 
+  const apparent_temperature_max = document.getElementById("apparent_temperature_max");
+  const wind_gusts_10m_max = document.getElementById("wind_gusts_10m_max");
+  const temperature_2m_max = document.getElementById("temperature_2m_max");
+  const temperature_2m_min = document.getElementById("temperature_2m_min");
+  const wind_speed_10m_max = document.getElementById("wind_speed_10m_max");
+  const apparent_temperature_min = document.getElementById("apparent_temperature_min");
+  const time = document.getElementById("time");
+  const weatherCode = document.getElementById("weatherCode");
+  
+  // ICONS
+  let iconDailyToday=[];
+  
+  iconDailyToday.push('/images/storm.png');
+  iconDailyToday.push('/images/cloudy.png');
+  iconDailyToday.push('/images/sun.png');
+  iconDailyToday.push('/images/fog.png');
+  iconDailyToday.push('/images/rain.png');
+  iconDailyToday.push('/images/snow.png');
+  
+if (currentCityData.daily.weather_code[indexOfToday] === 0) {
+ iconDailyToday = '/images/sun.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 1) && (currentCityData.daily.weather_code[indexOfToday] <=3)) {
+ iconDailyToday = '/images/cloudy.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 45) && (currentCityData.daily.weather_code[indexOfToday] <=48)) {
+  iconDailyToday = '/images/fog.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 51) && (currentCityData.daily.weather_code[indexOfToday] <=67)) {
+  iconDailyToday = '/images/rain.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 80) && (currentCityData.daily.weather_code[indexOfToday] <=82)) {
+  iconDailyToday = '/images/rain.png';
+}  else if ((currentCityData.daily.weather_code[indexOfToday] >= 71) && (currentCityData.daily.weather_code[indexOfToday] <=75)) {
+  iconDailyToday = '/images/snow.png';
+} else if (currentCityData.daily.weather_code[indexOfToday] === 95){
+ iconDailyToday = '/images/storm.png';
+} else {
+  iconDailyToday = '/images/sun.png';
+}
+  
+  
+  // New York Card
+  
+  const dashboardCardTitleNewYork = document.querySelector('#cityfocus-1-new-york-heading');
+  dashboardCardTitleNewYork.innerHTML = 'New York';
+  
+  const dashboardNewYorkCardImage = document.querySelector('#cityfocus-1-new-york-card-image');
+  dashboardNewYorkCardImage.src = iconDailyToday;
+  
+  const dashboardNewYorkCardTemp = document.querySelector('#cityfocus-1-new-york-card-temp');
+  dashboardNewYorkCardTemp.innerHTML = currentCityData.daily.temperature_2m_max[indexOfToday] + ' °C';
+  
+  const dashboardNewYorkCardWind = document.querySelector('#cityfocus-1-new-york-card-wind');
+  dashboardNewYorkCardWind.innerHTML = currentCityData.daily.wind_speed_10m_max[indexOfToday] + ' km/h'; 
+  
+  });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+  
+   // Paris
+  const currentCity = "paris";
+  const currentCityData = weatherData[currentCity + "_daily"]
+  const currentCityDataHourly = weatherData[currentCity + "_hourly"]
+  const date = new Date();
+  const day = date.getDay();
+  const indexOfToday = currentCityData.daily.time.indexOf(`Today`); 
+  const apparent_temperature_max = document.getElementById("apparent_temperature_max");
+  const wind_gusts_10m_max = document.getElementById("wind_gusts_10m_max");
+  const temperature_2m_max = document.getElementById("temperature_2m_max");
+  const temperature_2m_min = document.getElementById("temperature_2m_min");
+  const wind_speed_10m_max = document.getElementById("wind_speed_10m_max");
+  const apparent_temperature_min = document.getElementById("apparent_temperature_min");
+  const time = document.getElementById("time");
+  const weatherCode = document.getElementById("weatherCode");
+  
+  // ICONS
+  let iconDailyToday=[];
+  
+  iconDailyToday.push('/images/storm.png');
+  iconDailyToday.push('/images/cloudy.png');
+  iconDailyToday.push('/images/sun.png');
+  iconDailyToday.push('/images/fog.png');
+  iconDailyToday.push('/images/rain.png');
+  iconDailyToday.push('/images/snow.png');
+  
+if (currentCityData.daily.weather_code[indexOfToday] === 0) {
+ iconDailyToday = '/images/sun.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 1) && (currentCityData.daily.weather_code[indexOfToday] <=3)) {
+ iconDailyToday = '/images/cloudy.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 45) && (currentCityData.daily.weather_code[indexOfToday] <=48)) {
+  iconDailyToday = '/images/fog.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 51) && (currentCityData.daily.weather_code[indexOfToday] <=67)) {
+  iconDailyToday = '/images/rain.png';
+} else if ((currentCityData.daily.weather_code[indexOfToday] >= 80) && (currentCityData.daily.weather_code[indexOfToday] <=82)) {
+  iconDailyToday = '/images/rain.png';
+}  else if ((currentCityData.daily.weather_code[indexOfToday] >= 71) && (currentCityData.daily.weather_code[indexOfToday] <=75)) {
+  iconDailyToday = '/images/snow.png';
+} else if (currentCityData.daily.weather_code[indexOfToday] === 95){
+ iconDailyToday = '/images/storm.png';
+} else {
+  iconDailyToday = '/images/sun.png';
+}
+   
+  
+  // Paris Card
+  
+  const dashboardCardTitleParis = document.querySelector('#cityfocus-1-paris-heading');
+  dashboardCardTitleParis.innerHTML = 'Paris';
+  
+  const dashboardParisCardImage = document.querySelector('#cityfocus-1-paris-card-image');
+  dashboardParisCardImage.src = iconDailyToday;
+  
+  const dashboardParisCardTemp = document.querySelector('#cityfocus-1-paris-card-temp');
+  dashboardParisCardTemp.innerHTML = currentCityData.daily.temperature_2m_max[indexOfToday] + ' °C';
+  
+  const dashboardParisCardWind = document.querySelector('#cityfocus-1-paris-card-wind');
+  dashboardParisCardWind.innerHTML = currentCityData.daily.wind_speed_10m_max[indexOfToday] + ' km/h'; 
+  
+  });
+</script>
+<main class="columns has-background-primary-light">
+  <section class="column is-3">
+    <figure class="image is-256x256">
+      <img src="/images/logo.png">
+    </figure>
+  </section>
+  <section class="column is-5">
+    <div class="has-text-centered pt-6 ">
+      <p class="title has-text-weight-bold">Dashboard
+      </p>
+      <p id="time" class="subtitle has-text-weight-bold">
+        <span id="weatherCode"></span>
+      </p>
+    </div>
+  </section>
+  <section class="column is-4"></section>
+</main>
+<article class="content">
+  <main class="columns mt-6"></main>
+  <div class="container">
+  <main class="columns mx-6 mb-6">
+    <section class="column is-4 p-4">
+      <a href="/city-focus/?city=berlin">
+        <section class="card has-text-centered has-background-black">
+          <header class="card-header">
+            <p id="cityfocus-1-berlin-heading" class="card-header-title is-size-4 is-centered has-text-white">
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-berlin-card-image" alt="">
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-6">
+              <article class="card-content">
+                <p id="cityfocus-1-berlin-card-temp" class="content is-size-5 has-text-white has-text-centered">
+                </p>
+              </article>
+            </div>
+            <div class="column is-6">
+              <article class="card-content">
+                <p id="cityfocus-1-berlin-card-wind" class="content is-size-5 has-text-white has-text-centered">
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </a>
+    </section>
+    <section class="column is-4 p-4">
+      <a href="/city-focus/?city=amsterdam">
+        <section class="card has-text-centered has-background-black">
+          <header class="card-header">
+            <p id="cityfocus-1-amsterdam-heading" class="card-header-title is-size-4 is-centered has-text-white">
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-amsterdam-card-image" alt="Sun" class="">
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-6">
+              <article class="card-content">
+                <p id="cityfocus-1-amsterdam-card-temp" class="content is-size-5 has-text-white has-text-centered">
+                </p>
+              </article>
+            </div>
+            <div class="column is-6">
+              <article class="card-content">
+                <p id="cityfocus-1-amsterdam-card-wind" class="content is-size-5 has-text-white has-text-centered">
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </a>
+    </section>
+    <section class="column is-4 p-4">
+      <a href="/city-focus/?city=copenhagen">
+        <section class="card has-text-centered has-background-black">
+          <header class="card-header">
+            <p id="cityfocus-1-copenaghen-heading" class="card-header-title is-size-4 is-centered has-text-white">
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-64x64 m-auto">
+              <img id="cityfocus-1-copenaghen-card-image" alt="Sun" class="">
+            </figure>
+          </div>
+          <div class="columns">
+            <div class="column is-6">
+              <article class="card-content">
+                <p  class="content is-size-5 has-text-white has-text-centered">
+                  <span id="cityfocus-1-copenaghen-card-temp"></span>
+                </p>
+              </article>
+            </div>
+            <div class="column is-6">
+              <article class="card-content">
+                <p id="cityfocus-1-copenaghen-card-wind" class="content is-size-5 has-text-white has-text-centered">
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </a>
+    </section>
+  </main>
+  <div class="container">
+    <main class="columns mx-6 mb-6">
+      <section class="column is-4 p-4">
+        <a href="/city-focus/?city=cork">
+          <section class="card has-text-centered has-background-black">
+            <header class="card-header">
+              <p id="cityfocus-1-cork-heading" class="card-header-title is-size-4 is-centered has-text-white">
+              </p>
+            </header>
+            <div class="card-image">
+              <figure class="image is-64x64 m-auto">
+                <img id="cityfocus-1-cork-card-image" alt="Sun" class="">
+              </figure>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <article class="card-content">
+                  <p id="cityfocus-1-cork-card-temp" class="content is-size-5 has-text-white has-text-centered">
+                  </p>
+                </article>
+              </div>
+              <div class="column is-6">
+                <article class="card-content">
+                  <p id="cityfocus-1-cork-card-wind" class="content is-size-5 has-text-white has-text-centered">
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+        </a>
+      </section>
+      <section class="column is-4 p-4">
+        <a href="/city-focus/?city=new_york">
+          <section class="card has-text-centered has-background-black">
+            <header class="card-header">
+              <p id="cityfocus-1-new-york-heading" class="card-header-title is-size-4 is-centered has-text-white">
+              </p>
+            </header>
+            <div class="card-image">
+              <figure class="image is-64x64 m-auto">
+                <img id="cityfocus-1-new-york-card-image" alt="Sun" class="">
+              </figure>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <article class="card-content">
+                  <p id="cityfocus-1-new-york-card-temp" class="content is-size-5 has-text-white has-text-centered">
+                  </p>
+                </article>
+              </div>
+              <div class="column is-6">
+                <article class="card-content">
+                  <p id="cityfocus-1-new-york-card-wind" class="content is-size-5 has-text-white has-text-centered">
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+        </a>
+      </section>
+      <section class="column is-4 p-4">
+        <a href="/city-focus/?city=paris">
+          <section class="card has-text-centered has-background-black">
+            <header class="card-header">
+              <p id="cityfocus-1-paris-heading" class="card-header-title is-size-4 is-centered has-text-white">
+              </p>
+            </header>
+            <div class="card-image">
+              <figure class="image is-64x64 m-auto">
+                <img id="cityfocus-1-paris-card-image" alt="Sun" class="">
+              </figure>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <article class="card-content">
+                  <p id="cityfocus-1-paris-card-temp" class="content is-size-5 has-text-white has-text-centered">
+                  </p>
+                </article>
+              </div>
+              <div class="column is-6">
+                <article class="card-content">
+                  <p id="cityfocus-1-paris-card-wind" class="content is-size-5 has-text-white has-text-centered">
+                  </p>
+                </article>
+              </div>
+            </div>
+          </section>
+        </a>
+      </section>
+    </main>
+  </div>
+</article>
+<div class="container mb-6"></div>

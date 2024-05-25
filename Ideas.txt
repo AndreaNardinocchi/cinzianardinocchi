@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="has-background-white" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <script src="/js/weather_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentCity = "amsterdam"
+            const currentCityData = weatherData[currentCity + "_daily"].daily
+            const todayMaxTemp = currentCityData.temperature_2m_max[0]
+            const maxTempOne = document.querySelector(
+                "...selector here..."
+            )
+            cardOne.innerHTML = todayMaxTemp
+        })
+    </script>
+</head>
+......
+</html>
+
+
+
+I gave up on trying to pull the country name from the object..decided it was less hassle to create an array of strings with the country name

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>(Whether) Weather</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <script src="weather_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentCity = "amsterdam";
+            const currentCityData = weatherData[currentCity + "_daily"]
+            const time = document.getElementById("time");
+            const weatherCode = document.getElementById("weatherCode");
+
+            time.innerHTML = currentCityData.daily.time[0];
+            weatherCode.innerHTML = currentCityData.daily.weather_code[0];
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Get all "navbar-burger" elements
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    });
+  </script>
+</head>
+  <body class="is-family-sans-serif">
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>(Whether) Weather</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script>dayjs().format()</script>
+  <script src="/js/weather_data.js"></script>
+  <script src="/js/components/daily_forecasts_widgets.js"></script>
+  <script src="/js/menu.js"></script>
+ 
+  {% if script %}
+    <script src="{{ script }}"></script>
+  {% endif %}
+</head>
+  {% include "nav.njk" %}
+  <body class="is-family-sans-serif">
+    {% include "header.njk" %}
+    {{ content | safe }}
+    {% include "footer.njk" %}
+  </body>
+</html>

@@ -1,0 +1,198 @@
+{# 
+/*<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentCity = urlParams.get('city');
+  const currentCityData = weatherData[currentCity + "_daily"]
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const dayNumbers = ["0", "1", "2", "3", "4", "5", "6"];
+
+  function addOneDay(date = new Date()) {
+    const dateCopy = new Date(date);
+  
+    dateCopy.setDate(dateCopy.getDate() + 1);
+  
+    return dateCopy;
+  }
+
+  console.log(dayNumbers[day])
+
+  const tomorrow = addOneDay(date);
+  console.log(tomorrow);
+  const todayPlusTwo = addOneDay(tomorrow);
+  const todayPlusThree = addOneDay(todayPlusTwo);
+  const todayPlusFour = addOneDay(todayPlusThree);
+  const todayPlusFive = addOneDay(todayPlusFour);
+  const todayPlusSix = addOneDay(todayPlusFive);
+  const todayPlusSeven = addOneDay(todayPlusSix);
+
+  console.log(todayPlusTwo);
+  console.log(todayPlusSeven);
+  console.log(dayNames[addOneDay(date)]);
+  
+  const indexOfToday = currentCityData.daily.time.indexOf(`Today`);  
+  const indexOfTodayPlusOne = currentCityData.daily.time.indexOf(`Today+${dayNumbers[day+1]}`);  
+  const indexOfTodayPlusTwo = currentCityData.daily.time.indexOf(`Today+${dayNumbers[day+2]}`); 
+  const indexOfTodayPlusThree = currentCityData.daily.time.indexOf(`Today+${dayNumbers[day+3]}`);  
+  const indexOfTodayPlusFour = currentCityData.daily.time.indexOf(`Today+${dayNumbers[day+4]}`);  
+  const indexOfTodayPlusFive = currentCityData.daily.time.indexOf(`Today+${dayNumbers[day+5]}`); 
+  const indexOfTodayPlusSix = currentCityData.daily.time.indexOf(`Today+${dayNumbers[day+6]}`); 
+
+  weatherData.forEach((dayNumbers[day]) => {
+  main.innerHTML = main.innerHTML + createDailyForecast(weatherData);
+}); */ #}
+</script>
+
+<div class="columns has-background-primary-light mt-6 py-4">
+  <article class="column is-full content">
+    <p class="title has-text-centered">Daily Forecast</p>
+  </article>
+</div>
+<main class="container mt-6 mb-6">
+  <div class="columns">
+    <div class="column">
+      
+      <div class="card has-background-black">
+        <header class="card-header">
+          <p id="cityfocus-today-1-heading" class="card-header-title is-size-5 is-centered has-text-white">
+          </p>
+        </header>
+        <div class="card-image has-background-black">
+          <figure class="image">
+            <img id="cityfocus-today-1-image" alt="Sun" class="is-16by9">
+          </figure>
+        </div>
+        <footer class="card-content has-background-black pt-6 pb-6">
+              <p id="cityfocus-today-1-min-temp" class="content is-size-6 has-text-white is-pulled-left ">
+              </p>
+              <p id="cityfocus-today-1-max-temp" class="content is-size-6 has-text-white is-pulled-right ">
+              </p>
+        </footer>
+      </div>
+      
+    </div>
+    
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header">
+          <p id="cityfocus-mon-1-heading" class="card-header-title is-size-5 is-centered has-text-white">
+          </p>
+        </header>
+        <div class="card-image has-background-black">
+          <figure class="image">
+            <img id="cityfocus-mon-1-image" alt="Sun" class="is-16by9">
+          </figure>
+        </div>
+        <footer class="card-content has-background-black pt-6 pb-6">
+              <p id="cityfocus-mon-1-min-temp" class="content is-size-6 has-text-white is-pulled-left ">
+              </p>
+              <p id="cityfocus-mon-1-max-temp" class="content is-size-6 has-text-white is-pulled-right ">
+              </p>
+        </footer>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header">
+          <p id="cityfocus-tue-1-heading" class="card-header-title is-size-5 is-centered has-text-white">
+          </p>
+        </header>
+        <div class="card-image has-background-black">
+          <figure class="image">
+            <img id="cityfocus-tue-1-image" alt="Sun" class="is-16by9">
+          </figure>
+        </div>
+        <footer class="card-content has-background-black pt-6 pb-6">
+              <p id="cityfocus-tue-1-min-temp" class="content is-size-6 has-text-white is-pulled-left ">
+              </p>
+              <p id="cityfocus-tue-1-max-temp" class="content is-size-6 has-text-white is-pulled-right ">
+              </p>
+        </footer>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header">
+          <p id="cityfocus-wed-1-heading" class="card-header-title is-size-5 is-centered has-text-white">
+          </p>
+        </header>
+        <div class="card-image has-background-black">
+          <figure class="image">
+            <img id="cityfocus-wed-1-image" alt="Sun" class="is-16by9">
+          </figure>
+        </div>
+        <footer class="card-content has-background-black pt-6 pb-6">
+              <p id="cityfocus-wed-1-min-temp" class="content is-size-6 has-text-white is-pulled-left ">
+              </p>
+              <p id="cityfocus-wed-1-max-temp" class="content is-size-6 has-text-white is-pulled-right ">
+              </p>
+        </footer>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header">
+          <p id="cityfocus-thur-1-heading" class="card-header-title is-size-5 is-centered has-text-white">
+          </p>
+        </header>
+        <div class="card-image has-background-black">
+          <figure class="image">
+            <img id="cityfocus-thur-1-image" alt="Sun" class="is-16by9">
+          </figure>
+        </div>
+        <footer class="card-content has-background-black pt-6 pb-6">
+              <p id="cityfocus-thur-1-min-temp" class="content is-size-6 has-text-white is-pulled-left ">
+              </p>
+              <p id="cityfocus-thur-1-max-temp" class="content is-size-6 has-text-white is-pulled-right ">
+              </p>
+        </footer>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header">
+          <p id="cityfocus-fri-1-heading" class="card-header-title is-size-5 is-centered has-text-white">
+          </p>
+        </header>
+        <div class="card-image has-background-black">
+          <figure class="image">
+            <img id="cityfocus-fri-1-image" alt="Sun" class="is-16by9">
+          </figure>
+        </div>
+        <footer class="card-content has-background-black pt-6 pb-6">
+              <p id="cityfocus-fri-1-min-temp" class="content is-size-6 has-text-white is-pulled-left ">
+              </p>
+              <p id="cityfocus-fri-1-max-temp" class="content is-size-6 has-text-white is-pulled-right ">
+              </p>
+        </footer>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card has-background-black">
+        <header class="card-header">
+          <p id="cityfocus-sat-1-heading" class="card-header-title is-size-5 is-centered has-text-white">
+          </p>
+        </header>
+        <div class="card-image has-background-black">
+          <figure class="image">
+            <img id="cityfocus-sat-1-image" alt="Sun" class="is-16by9">
+          </figure>
+        </div>
+        <footer class="card-content has-background-black pt-6 pb-6">
+              <p id="cityfocus-sat-1-min-temp" class="content is-size-6 has-text-white is-pulled-left ">
+              </p>
+              <p id="cityfocus-sat-1-max-temp" class="content is-size-6 has-text-white is-pulled-right ">
+              </p>
+        </footer>
+      </div>
+    </div>
+    
+  </div>
+</main>
+
+
+
+
+
+
+
+

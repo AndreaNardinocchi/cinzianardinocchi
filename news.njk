@@ -1,0 +1,44 @@
+---
+layout: layout.njk
+eleventyNavigation:
+key: News
+order: 5
+---
+<main class="columns has-background-primary-light">
+  <section class="column is-3">
+    <figure class="image is-256x256">
+      <img src="/images/logo.png">
+    </figure>
+  </section>
+  <section class="column is-5">
+    <div class="has-text-centered pt-6 ">
+      <p class="title has-text-weight-bold">News
+      </p>
+      <p class="subtitle">
+        Every days new for travelers
+      </p>
+    </div>
+  </section>
+  <section class="column is-4">
+    <figure class="image is-128x128 m-auto">
+      <img src="/images/summer.png" class="pt-3"/>
+    </figure>
+  </section>
+  <section class="column is-2">
+  </section>
+</main>
+<article class="content">
+  <div class="container">
+    <main class="columns content mt-6">
+      <section class="column is-full px-6" >
+        <h3> Latest News </h3>
+        <hr>
+      </section>
+    </main>
+    {% include "news-column1.njk" %}
+  </div>
+</article>
+
+			    
+			       	
+	

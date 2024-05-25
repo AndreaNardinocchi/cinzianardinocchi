@@ -1,0 +1,101 @@
+---
+layout: layout.njk
+eleventyNavigation:
+  key: Forecasts
+  order: 2
+---
+<script src="/js/weather_javascript.js"></script>
+
+<main class="columns has-background-primary-light">
+  <section class="column is-3">
+    <figure class="image is-256x256">
+      <img src="/images/logo.png">
+    </figure>
+  </section>
+  <section class="column is-5 heading">
+    <div class="has-text-centered pt-4 ">
+      <p id="cityfocus-1-heading" class="title has-text-weight-bold">
+      </p>
+      <p id="day" class="subtitle has-text-weight-bold"><br>
+      Weather Code is <span id="weatherCode"></span>
+      </p>
+    </div>
+  </section>
+  <section class="column is-4 top-card">
+    <section class="card has-background-black">
+      <header class="card-header">
+        <p id="cityfocus-1-top-card-heading" class="card-header-title is-size-4 is-centered has-text-white">
+          
+        </p>
+        <p id="cityfocus-1-top-card-sub-heading" class="card-header-title is-size-6 is-centered has-text-white"></p>
+      </header>
+      <div class="card-image has-background-black">
+        <figure class="image is-128x128 m-auto">
+          <img id="cityfocus-1-top-card-image" alt="Sun">
+        </figure>
+      </div>
+      <div class="columns">
+        <div class="column is-6">
+          <article class="card-content">
+            <p id="cityfocus-1-top-card-temp" class="content is-size-5 has-text-white has-text-centered">
+            </p>
+          </article>
+        </div>
+        <div class="column is-6">
+          <article class="card-content">
+            <p id="cityfocus-1-top-card-wind" class="content is-size-5 has-text-white has-text-centered">
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+<article class="content">
+  <main class="columns">
+    <section class="container p-4">
+    </section>
+  </main>
+  <div class="container">
+    <main class="columns">
+      <section class="column is-one-quarter sun-image">
+        <figure class="image is-256x256">
+          <img src="/images/sun.png"/>
+        </figure>
+      </section>
+      <section class="column is-3 left-card">
+        <section class="card has-text-centered has-background-black">
+          <header class="card-header">
+            <p id="cityfocus-1-left-card-heading" class="card-header-title is-size-4 is-centered has-text-white"></p>
+          </header>
+          <div class="card-image has-background-black">
+            <figure class="image">
+              <img id="cityfocus-1-left-card-image" alt="Mild day" class="is-16by9">
+            </figure>
+          </div>
+          <article class="card-content">
+            <p id="cityfocus-1-left-card-temp" class="content is-size-5 has-text-white">
+            </p>
+          </article>
+        </section>
+      </section>
+      <section class="column is-3 right-card">
+        <section class="card has-text-centered has-background-black">
+          <header class="card-header">
+            <p id="cityfocus-1-right-card-heading" class="card-header-title is-size-4 is-centered has-text-white"></p>
+          </header>
+          <div class="card-image has-background-black">
+            <figure class="image">
+              <img id="cityfocus-1-right-card-image" alt="Mild day" class="is-16by9">
+            </figure>
+          </div>
+          <article class="card-content">
+            <p id="cityfocus-1-right-card-temp" class="content is-size-5 has-text-white">
+            </p>
+          </article>
+        </section>
+      </section>
+    </main>
+  </article>
+  {% include "cities-forecasts.njk" %}
+  {% include "back-to-dashboard.njk" %}
